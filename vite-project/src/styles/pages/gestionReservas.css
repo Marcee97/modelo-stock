@@ -5,8 +5,22 @@
 .gestion-reservas__cont{
     color: #fff;
     margin: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
 }
-p{
+.gestion-reservas__cont-reserva{
     outline: 1px solid red;
-    padding: .2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: .3em;
+    font-size: 1.3em;
+}
+
+.gestion-reservas__cont-icons{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2em;
+
 }
