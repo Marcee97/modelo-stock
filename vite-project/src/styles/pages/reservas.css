@@ -1,0 +1,11 @@
+.reservas{
+border: 1px solid red;
+padding: .3em;
+width: 25%;
+
+}
+.reservas__cont{
+display: flex;
+flex-direction: column;
+gap: .5em;
+}

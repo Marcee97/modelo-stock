@@ -1,0 +1,12 @@
+.gestion-reservas{
+
+}
+
+.gestion-reservas__cont{
+    color: #fff;
+    margin: 5px;
+}
+p{
+    outline: 1px solid red;
+    padding: .2em;
+}
