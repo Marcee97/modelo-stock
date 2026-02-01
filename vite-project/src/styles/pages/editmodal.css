@@ -1,0 +1,14 @@
+.edit-modal{
+    outline: 1px solid #fff;
+    padding: .4em;
+}
+.edit-modal__cont{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.edit-modal__cont-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}

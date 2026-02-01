@@ -1,11 +1,80 @@
-.reservas{
-border: 1px solid red;
-padding: .3em;
-width: 25%;
-
+.reservas {
+  border: 1px solid #696969;
+  padding: 0.3em;
+  font-family: sans-serif;
+  border-radius: 8px;
+  background-color: #33333355;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+  max-height: 21.3em;
 }
-.reservas__cont{
-display: flex;
-flex-direction: column;
-gap: .5em;
+.reservas--closed {
+  max-height: 3em;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+  border: 1px solid #696969;
+ border-radius: 8px;
+  padding: .3em;
+}
+.reservas__cont {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0.3em;
+}
+.reservas__cont-cabecera{
+    display: flex;
+    justify-content: space-between;
+}
+.reservas__cont-titulo {
+  color: #fff;
+}
+.reservas__cont-btn-add{
+  font-size: 1.1em;
+  padding: 0em 2em;
+  border-radius: 15px;
+  border: 1px solid #4b4b4b;
+  background-color: #36363600;
+  color: #ffffff;
+  font-weight: bold;
+}
+.reservas__cont-btn-add--active{
+    display: none;
+}
+.reservas__cont-btn-add:hover{
+background-color: #4b4b4b;
+}
+.reservas__cont-input {
+  font-size: 1.2em;
+  padding: 0.4em;
+  border-radius: 8px;
+  border: 1px solid #696969;
+  background-color: transparent;
+  color: #fff;
+}
+
+.reservas__cont-btns {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.reservas__cont-btn-registrar {
+  font-size: 1.1em;
+  padding: 0em 2em;
+  border-radius: 15px;
+  border: 1px solid #4b4b4b;
+  background-color: #36363600;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.reservas__cont-btn-cancelar {
+  font-size: 1.1em;
+  padding: 0.5em 2em;
+  border-radius: 15px;
+  border: 1px solid #723535;
+  background-color: #1b1b1b;
+  color: #fc1a1a;
+  font-weight: bold;
 }

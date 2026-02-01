@@ -1,14 +1,16 @@
 html{
-    background-color: rgb(24, 24, 24);
-    
+    background-color: rgb(14, 14, 14);
+    padding: .5em;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 .app{
     display: flex;
+    gap: .9em;
 }
