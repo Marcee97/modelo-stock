@@ -1,0 +1,76 @@
+.modal-venta {
+  border: 1px solid #696969;
+  padding: 0.3em;
+  border-radius: 8px;
+  background-color: #333333;
+  transition: all 0.5s ease-in-out;
+  transform: translateY(-280%);
+  position: absolute;
+  border: 1px solid #4b4b4b;
+  width: 96%;
+  z-index: 10;
+}
+
+.modal-venta__titulo {
+  padding: 0.2em 0 0.5em 0;
+}
+
+.modal-venta--active {
+  border: 1px solid #707070;
+
+  padding: 0.3em;
+  border-radius: 8px;
+  position: absolute;
+
+  transition: all 0.5s ease-in-out;
+  transform: translateY(0);
+  background-color: #0d1117;
+  width: 96%;
+  z-index: 10;
+}
+
+.modal-venta__cont {
+}
+.modal-venta__cont-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 1em 0 1em 0;
+  border-top: 1px solid rgb(95, 95, 95);
+}
+
+.modal-venta__detalle {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2em 0.5em;
+  font-weight: bold;
+  border-radius: 9px;
+}
+
+.modal-venta__detalle:hover {
+  background-color: #464646;
+}
+
+.modal-venta__cont-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-venta__btn-volver {
+  font-size: 1.1em;
+  padding: 0.3em 2em;
+  border-radius: 15px;
+  border: 1px solid #636363;
+  background-color: #212830;
+  color: #ffffff;
+  font-weight: bold;
+}
+.modal-venta__btn-confirmar {
+  font-size: 1.1em;
+  padding: 0em 2em;
+  border-radius: 15px;
+  border: 1px solid #636363;
+  background-color: #212830;
+  color: #ffffff;
+  font-weight: bold;
+}

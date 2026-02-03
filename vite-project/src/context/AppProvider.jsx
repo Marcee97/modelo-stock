@@ -11,15 +11,16 @@ export function AppProvider({ children }) {
   const [telefono, setTelefono] = useState("");
   const [seña, setSeña] = useState("");
   const [reservas, setReservas] = useState([]);
-  const [onModalDel, setOnModalDel] = useState(false)
+  const [onModalDel, setOnModalDel] = useState(false);
   const [idEliminado, setIdEliminado] = useState("");
-  const [idEditado, setIdEditado] = useState("")
-  const [onModalEdit, setOnModalEdit] = useState(false)
-  const [animationReservas, setAnimationReservas] = useState(false)
-
+  const [idEditado, setIdEditado] = useState("");
+  const [onModalEdit, setOnModalEdit] = useState(false);
+  const [animationReservas, setAnimationReservas] = useState(false);
+  const [onModalVenta, setOnModalVenta] = useState(false);
+  const [idVenta, setIdVenta] = useState("");
+  const [gestionDesactive, setGestionDesactive] = useState(false);
   const cargarReservas = () => {
     window.api.getReservas().then(setReservas);
-    
   };
   const limpiarFormulario = () => {
     setNombre("");
@@ -31,7 +32,6 @@ export function AppProvider({ children }) {
 
   useEffect(() => {
     cargarReservas();
-    
   }, []);
 
   const addReserva = async () => {
@@ -51,32 +51,35 @@ export function AppProvider({ children }) {
     limpiarFormulario();
   };
 
-
   const openModalDel = (data) => {
-    setOnModalDel(true)
+    setOnModalDel(true);
     setIdEliminado(data);
-    console.log(data, "la data para borrar")
-  }
+  };
 
   const delReservas = async (id) => {
     await window.api.delReserva(id).then(() => {
       setReservas((prev) => prev.filter((reserva) => reserva.id !== id));
     });
-    setOnModalDel(false)
+    setOnModalDel(false);
   };
 
   const openModalEdit = (data) => {
-    setOnModalEdit(true)
+    setOnModalEdit(true);
     setIdEditado(data);
-    console.log(data, "La data de la reserva para editar")
-  }
+  };
 
-  const editReservas = async(reserva) => {
-    await window.api.editReserva(reserva)
-    
-    cargarReservas()
-    setOnModalEdit(false)
-  }
+  const editReservas = async (reserva) => {
+    await window.api.editReserva(reserva);
+    cargarReservas();
+    setOnModalEdit(false);
+  };
+
+  const openModalVenta = (data) => {
+    setOnModalVenta(true);
+    setIdVenta(data);
+    setGestionDesactive(true)
+  };
+
   const capitalizarPalabras = (texto) => {
     if (!texto) return "";
     return texto
@@ -116,6 +119,13 @@ export function AppProvider({ children }) {
     setIdEliminado,
     animationReservas,
     setAnimationReservas,
+    onModalVenta,
+    setOnModalVenta,
+    openModalVenta,
+    idVenta,
+    setIdVenta,
+    gestionDesactive,
+    setGestionDesactive,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
