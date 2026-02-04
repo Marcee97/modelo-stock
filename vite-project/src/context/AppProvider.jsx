@@ -19,9 +19,14 @@ export function AppProvider({ children }) {
   const [onModalVenta, setOnModalVenta] = useState(false);
   const [idVenta, setIdVenta] = useState("");
   const [gestionDesactive, setGestionDesactive] = useState(false);
+  const [openCloseReserva, setOpenCloseReserva] = useState(false);
   const cargarReservas = () => {
     window.api.getReservas().then(setReservas);
   };
+
+  useEffect(() => {
+    console.log(reservas);
+  }, [reservas]);
   const limpiarFormulario = () => {
     setNombre("");
     setApellido("");
@@ -77,7 +82,7 @@ export function AppProvider({ children }) {
   const openModalVenta = (data) => {
     setOnModalVenta(true);
     setIdVenta(data);
-    setGestionDesactive(true)
+    setGestionDesactive(true);
   };
 
   const capitalizarPalabras = (texto) => {
@@ -126,6 +131,8 @@ export function AppProvider({ children }) {
     setIdVenta,
     gestionDesactive,
     setGestionDesactive,
+    openCloseReserva,
+    setOpenCloseReserva,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
