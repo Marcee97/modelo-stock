@@ -1,0 +1,67 @@
+.modal-final-venta {
+  border: 1px solid #696969;
+  padding: 0.3em;
+  border-radius: 8px;
+  position: absolute;
+  width: 102%;
+  background-color: #2c2c2c;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 45;
+  background-color: #333333;
+}
+.modal-final-venta--active {
+  outline: 1px solid red;
+  padding: 2em 0;
+  position: absolute;
+  width: 100%;
+  background-color: #2c2c2c;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 45;
+}
+
+.modal-final-venta__titulo{
+    padding: .3em;
+}
+
+.modal-final-venta__cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #5f5f5f;
+}
+
+.modal-final-venta__cont-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.3em;
+}
+
+.modal-final-venta__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2em 0.5em;
+  font-weight: bold;
+  border-radius: 9px;
+}
+.modal-final-venta__item:hover {
+  background-color: #464646;
+}
+.modal-final-venta__cont-input {
+  padding: 0.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-final-venta__input{
+border: none;
+padding: .3em;
+border-radius: 5px;
+}

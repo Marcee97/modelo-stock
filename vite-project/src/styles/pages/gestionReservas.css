@@ -3,7 +3,7 @@
   border-top: 1px solid #4b4b4b;
   border-left: 1px solid #4b4b4b;
   border-right: 1px solid #4b4b4b;
-  padding: 0.6em .6em 0 0.6em;
+  padding: 0.6em 0.6em 0 0.6em;
   border-radius: 8px 8px 0 0;
   background: linear-gradient(#57565655, #0d1117, #0d1117);
   position: relative;
@@ -24,14 +24,13 @@
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.25s ease;
- background: linear-gradient(
-  to top,
- rgba(13,17,23,1) 0%,
-rgba(13,17,23,0.95) 40%,
-rgba(13,17,23,0.6) 75%,
-rgba(13,17,23,0) 100%
-
-);
+  background: linear-gradient(
+    to top,
+    rgba(13, 17, 23, 1) 0%,
+    rgba(13, 17, 23, 0.95) 40%,
+    rgba(13, 17, 23, 0.6) 75%,
+    rgba(13, 17, 23, 0) 100%
+  );
 }
 
 .gestion-reservas.show-bottom::after {
@@ -65,11 +64,10 @@ rgba(13,17,23,0) 100%
   font-size: 1.3em;
   max-height: 2em;
   overflow: hidden;
-  transition: .5s all ease-in-out;
-
+  transition: 0.5s all ease-in-out;
 }
-.gestion-reservas__cont-reserva--active{
-border: 1px solid #4b4b4b;
+.gestion-reservas__cont-reserva--active {
+  border: 1px solid #4b4b4b;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -77,57 +75,58 @@ border: 1px solid #4b4b4b;
   font-size: 1.3em;
   max-height: 16em;
   overflow: hidden;
-  transition: .5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
 }
 
-
-.gestion-reservas__cont-cabecera{
+.gestion-reservas__cont-cabecera {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-.gestion-reservas__icon-down{
+.gestion-reservas__icon-down {
   margin-left: 20px;
 }
 
-.gestion-reservas__cont-cabecera-fecha{
+.gestion-reservas__cont-cabecera-fecha {
   display: flex;
   justify-content: space-evenly;
 }
 .gestion-reservas__cont-reserva:hover {
   background-color: #ffffff10;
 }
-.gestion-reservas__cont-titulo-cantidad{
+.gestion-reservas__cont-titulos {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
-.gestion-reservas__cantidad{
+.gestion-reservas__cabecera-reserva-archivo {
+}
+
+.gestion-reservas__cantidad {
   font-family: monospace;
 }
-.gestion-reservas__cont-fecha-hora{
+.gestion-reservas__cont-fecha-hora {
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: .3em;
-
+  gap: 0.3em;
 }
-.gestion-reservas__cont-titulo-fecha{
+.gestion-reservas__cont-titulo-fecha {
   font-family: monospace;
 }
 
-.gestion-reservas__reserva-fecha-hora{
-font-family: monospace;
-
+.gestion-reservas__reserva-fecha-hora {
+  font-family: monospace;
 }
-.gestion-reservas__detalle{
+.gestion-reservas__detalle {
   display: flex;
   justify-content: space-between;
-  padding: .1em;
+  padding: 0.1em;
 }
-.gestion-reservas__detalle:hover{
-background-color: #555;
-border-radius: 9px;
+.gestion-reservas__detalle:hover {
+  background-color: #555;
+  border-radius: 9px;
 }
 
 .gestion-reservas__cont-icons {

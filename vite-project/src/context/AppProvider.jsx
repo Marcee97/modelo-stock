@@ -20,13 +20,17 @@ export function AppProvider({ children }) {
   const [idVenta, setIdVenta] = useState("");
   const [gestionDesactive, setGestionDesactive] = useState(false);
   const [openCloseReserva, setOpenCloseReserva] = useState(false);
+  const [archivoReserva, setArchivoReserva] = useState("reserva");
+  const [montoPagado, setMontoPagado] = useState("")
+  const [openModalFinalVenta, setOpenModalFinalVenta] = useState(false);
+  const [dataModalFinalVenta, setDataModalFinalVenta] = useState([]);
+  const [archivos, setArchivos] = useState([]);
+
+
   const cargarReservas = () => {
     window.api.getReservas().then(setReservas);
   };
 
-  useEffect(() => {
-    console.log(reservas);
-  }, [reservas]);
   const limpiarFormulario = () => {
     setNombre("");
     setApellido("");
@@ -85,6 +89,32 @@ export function AppProvider({ children }) {
     setGestionDesactive(true);
   };
 
+  
+  const completarVenta = async (reserva) => {
+    setOpenModalFinalVenta(true);
+    setDataModalFinalVenta([reserva]);
+console.log(reserva, "desde completar venta")
+    //setDataModalFinalVenta(reserva);
+  };
+  useEffect(() => {
+    cargarArchivos();
+  }, []);
+
+  const modalFinalVenta = async (reserva, montoPagado) => {
+
+    const reservaCompleta = {
+      ...reserva,
+      estado: "vendido",
+      montoPagado: montoPagado
+    };
+    console.log(reservaCompleta, "desde el modal final antes de DB")
+   await window.api.ventaReserva(reservaCompleta);
+  };
+
+  const cargarArchivos = async () => {
+    const getArchivos = await window.api.getArchivos().then(setArchivos);
+  };
+
   const capitalizarPalabras = (texto) => {
     if (!texto) return "";
     return texto
@@ -133,6 +163,17 @@ export function AppProvider({ children }) {
     setGestionDesactive,
     openCloseReserva,
     setOpenCloseReserva,
+    archivoReserva,
+    setArchivoReserva,
+    completarVenta,
+    archivos,
+    cargarArchivos,
+    modalFinalVenta,
+    openModalFinalVenta,
+    setOpenModalFinalVenta,
+    dataModalFinalVenta,
+    setMontoPagado,
+    montoPagado
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }

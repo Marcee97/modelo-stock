@@ -37,4 +37,30 @@ ipcMain.handle("edit-reserva", (event, reserva) => {
   );
   return result;
 })
+
+ipcMain.handle("venta-reserva", (event, reserva) => {
+  try {
+
+    const result = db.prepare("INSERT INTO archivos (nombre, apellido, modelo, telefono, sena,monto_pagado, estado ,fecha_reserva, hora_reserva) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)").run(
+      reserva.nombre,
+      reserva.apellido,
+      reserva.modelo,
+      reserva.telefono,
+      reserva.sena,
+      reserva.montoPagado,
+      reserva.estado,
+      reserva.fecha_creacion,
+      reserva.hora_creacion,
+    )
+    return { success: true, id : result.lastInsertRowid };
+  } catch (error) {
+    console.error("Error al completar la venta: ", error)
+    return { success: false, error: error.message };
+  }
+})
+
+ipcMain.handle("get-archivos", () => {
+  const archivos = db.prepare("SELECT * FROM archivos").all();
+  return archivos;
+})
 module.exports = db;

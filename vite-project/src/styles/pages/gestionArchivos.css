@@ -1,0 +1,40 @@
+.gestion-archivos {
+  padding: 0.2em;
+}
+.gestion-archivos__cont {
+}
+.gestion-archivos__menu {
+    padding: .5em;
+}
+
+.gestion-archivos__menu-list {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+  color: #cecdcd;
+}
+
+.gestion-archivos__cont-archivos {
+  display: flex;
+  flex-direction: column;
+}
+.gestion-archivos__archivo {
+  border: 1px solid #4b4b4b;
+  padding: 0.5em;
+}
+.gestion-archivos__archivo-titulo {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 .8em 0;
+}
+
+.gestion-archivos__archivo-titulo-btn{
+    display: flex;
+    align-items: center;
+    gap: .6em;
+}
+.gestion-archivos__archivo-item{
+    display: flex;
+    justify-content: space-between;
+    padding: .3em .3em;
+}

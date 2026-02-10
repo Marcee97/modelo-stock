@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useAppContext } from "../context/UseAppContext";
+import { MdOutlineCancel } from "react-icons/md";
 import "../styles/pages/modalventa.css";
+import { ModalFinalVenta } from "./ModalFInalVenta";
 export const ModalVenta = () => {
   const {
     onModalVenta,
@@ -9,6 +11,9 @@ export const ModalVenta = () => {
     capitalizarPalabras,
     gestionDesactive,
     setGestionDesactive,
+    completarVenta,
+    modalFinalVenta,
+    openModalFinalVenta
   } = useAppContext();
   useEffect(() => {
     console.log(onModalVenta);
@@ -17,6 +22,7 @@ export const ModalVenta = () => {
     <section className={onModalVenta ? "modal-venta--active" : "modal-venta"}>
       <h2 className="modal-venta__titulo">Completar Compra</h2>
       <div className="modal-venta__cont">
+        {openModalFinalVenta && <ModalFinalVenta/>}
         {idVenta && (
           <div className="modal-venta__cont-detalles">
             <p className="modal-venta__detalle">
@@ -45,7 +51,19 @@ export const ModalVenta = () => {
               >
                 Volver
               </button>
-              <button className="modal-venta__btn-confirmar">Confirmar</button>
+              <button
+                className="modal-venta__btn-confirmar"
+               
+              >
+                {" "}
+                <span
+                  className="modal-venta__btn-confirmar-icon"
+                  title="Cancelar Compra"
+                >
+                  <MdOutlineCancel />
+                </span>{" "}
+                / <p  onClick={() => completarVenta(idVenta)} title="Confirmar Compra" className="modal-venta__btn-confirmar-text">Confirmar</p>
+              </button>
             </div>
           </div>
         )}
