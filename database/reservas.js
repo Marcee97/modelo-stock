@@ -52,6 +52,9 @@ ipcMain.handle("venta-reserva", (event, reserva) => {
       reserva.fecha_creacion,
       reserva.hora_creacion,
     )
+    console.log(reserva.id, "el id para eli,minar")
+      db.prepare("DELETE FROM reservas WHERE id = ?").run(reserva.id);
+
     return { success: true, id : result.lastInsertRowid };
   } catch (error) {
     console.error("Error al completar la venta: ", error)
