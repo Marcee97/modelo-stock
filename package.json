@@ -26,6 +26,9 @@
   "dependencies": {
     "better-sqlite3": "^12.6.2",
     "electron-squirrel-startup": "^1.0.1",
-    "electronmon": "^2.0.4"
+    "electronmon": "^2.0.4",
+    "express": "^5.2.1",
+    "groq-sdk": "^0.37.0",
+    "twilio": "^5.12.1"
   }
 }

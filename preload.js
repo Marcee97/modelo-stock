@@ -7,5 +7,7 @@ contextBridge.exposeInMainWorld('api', {
  delReserva: (id) => ipcRenderer.invoke('del-reserva', id),
  editReserva: (reserva) => ipcRenderer.invoke('edit-reserva', reserva),
  ventaReserva: (reserva) => ipcRenderer.invoke('venta-reserva', reserva),
- getArchivos: () => ipcRenderer.invoke('get-archivos')
+ getArchivos: () => ipcRenderer.invoke('get-archivos'),
+ respuestaChat: (mensaje) => ipcRenderer.invoke('respuesta-chat', mensaje)
+
 })
